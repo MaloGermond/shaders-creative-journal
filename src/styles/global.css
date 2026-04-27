@@ -1,8 +1,44 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@font-face {
+	font-family: Baskerville;
+  src: url('/src/assets/fonts/Baskervville-VariableFont_wght.ttf')format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+} 
+
+@font-face {
+	font-family: Baskerville;
+  src: url('/src/assets/fonts/Baskervville-VariableFont_wght.ttf')format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: Satoshi;
+  src: url('/src/assets/fonts/Satoshi-Variable.ttf')format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: Satoshi;
+  src: url('/src/assets/fonts/Satoshi-VariableItalic.ttf')format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+	font-family: FiraCode;
+  src: url('/src/assets/fonts/FiraCode-VariableFont_wght.ttf')format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 :root {
 	--accent: #2337ff;
@@ -17,7 +53,7 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 body {
-	font-family: var(--font-atkinson);
+	font-family: Satoshi;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -26,7 +62,7 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
-	font-size: 20px;
+	font-size: 1rem;
 	line-height: 1.7;
 }
 main {
@@ -41,6 +77,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: Baskerville;
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
@@ -78,10 +115,10 @@ p {
 }
 textarea {
 	width: 100%;
-	font-size: 16px;
+	font-size: 1rem;
 }
 input {
-	font-size: 16px;
+	font-size: 1rem;
 }
 table {
 	width: 100%;
@@ -92,10 +129,17 @@ img {
 	border-radius: 8px;
 }
 code {
+	font-family: FiraCode;
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
 }
+
+.astro-code {
+	font-size: 1rem;
+	font-family: FiraCode;
+}
+
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
@@ -115,7 +159,7 @@ hr {
 }
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 1.2rem;
 	}
 	main {
 		padding: 1em;

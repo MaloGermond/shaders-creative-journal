@@ -31,5 +31,29 @@ export default defineConfig({
 				],
 			},
 		},
+		{
+			provider: fontProviders.local(),
+			name: 'Baskerville',
+			cssVariable: '--font-baskerville',
+			fallbacks: ['sans-serif'],
+			options: {
+				variants: [
+					{
+						src: ['./src/assets/fonts/Baskervville-VariableFont_wght.ttf'],
+						weight: '100 900',
+						style: 'normal',
+						display: 'swap',
+						variable: true,
+					},
+					{
+						src: ['./src/assets/fonts/Baskervville-Italic-VariableFont_wght.ttf'],
+						weight: '100 900',
+						style: 'italic',
+						display: 'swap',
+						variable: true,
+					},
+				],
+			},
+		},
 	],
 });
