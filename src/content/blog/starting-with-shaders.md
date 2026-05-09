@@ -23,7 +23,7 @@ Le **GLSL** (OpenGL Shading Language) est un langage **typé statiquement**. Cel
 Voici les types de base les plus courants en GLSL, accompagnés de leur définition et d’un exemple d’utilisation :
 
 
-| Type          |                                                       |                          |
+| Type          |                                                       |                         |
 | ------------- | --------------------------------------------------------------- | ------------------------------- |
 | `float`       | Nombre à virgule flottante (32 bits).                           | `0.5`                           |
 | `vec2`        | Vecteur de 2 `float` (x, y).                                    | `vec2(1.0, 0.5)`                |

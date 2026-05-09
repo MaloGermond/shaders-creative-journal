@@ -1,0 +1,22 @@
+---
+---
+
+<section>
+  <div id="editor"></div>
+</section>
+
+<client:only>
+  <script>
+    import { EditorView} from "@codemirror/view";
+    // import { javascript } from "@codemirror/lang-javascript"; // Exemple : pour la coloration JS
+
+    // Initialisation de l'éditeur UNIQUEMENT côté client
+    const editor = new EditorView({
+      doc: 'console.log("hello world")',
+      parent: document.querySelector("#editor"),
+      extensions: [],
+    });
+
+    console.log(editor)
+  </script>
+</client:only>
