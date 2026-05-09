@@ -13,6 +13,7 @@ const { doc = `function hello() {
 
 <client:only>
   <script>
+    import {basicSetup} from "codemirror"
     import { EditorView, lineNumbers, keymap} from "@codemirror/view";
     import { javascript } from "@codemirror/lang-javascript";
     import {indentWithTab} from "@codemirror/commands"
@@ -25,7 +26,7 @@ const { doc = `function hello() {
     new EditorView({
       doc: doc,
       parent: document.querySelector("#editor"),
-      extensions: [lineNumbers(), javascript(), keymap.of([indentWithTab])],
+      extensions: [basicSetup, lineNumbers(), javascript(), keymap.of([indentWithTab])],
     });
 
   </script>
