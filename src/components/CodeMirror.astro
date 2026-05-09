@@ -1,21 +1,33 @@
 ---
+import '../styles/codemirror.css';
+
+const { doc = `function hello() {
+  console.log("hello les loulous");
+}` } = Astro.props;
+
 ---
 
 <section>
-  <div id="editor"></div>
+  <div id="editor" data-doc={JSON.stringify(doc)}></div>
 </section>
 
 <client:only>
   <script>
-    import { EditorView, lineNumbers} from "@codemirror/view";
-    // import { javascript } from "@codemirror/lang-javascript";
+    import { EditorView, lineNumbers, keymap} from "@codemirror/view";
+    import { javascript } from "@codemirror/lang-javascript";
+    import {indentWithTab} from "@codemirror/commands"
 
+    const editorElement = document.querySelector("#editor");
+    const doc = JSON.parse(editorElement.dataset.doc); 
+
+    
     // Initialisation de l'éditeur UNIQUEMENT côté client
-    const editor = new EditorView({
-      doc: 'console.log("hello world";)',
+    new EditorView({
+      doc: doc,
       parent: document.querySelector("#editor"),
-      extensions: [lineNumbers()],
+      extensions: [lineNumbers(), javascript(), keymap.of([indentWithTab])],
     });
 
   </script>
 </client:only>
+

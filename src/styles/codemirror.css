@@ -1,0 +1,23 @@
+#editor {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  border-style: hidden;
+  font-family: 'Fira Code', monospace;
+  background-color: #F7F7F8;
+}
+
+.cm-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ͼ2 .cm-gutters{
+  background-color: #e3e3e3;
+  color: #aaaaaa;
+  border-style: none;  
+}
+
+.ͼ1 .cm-lineNumbers .cm-gutterElement{
+  text-align: center;
+    font-size:0.8rem;
+}

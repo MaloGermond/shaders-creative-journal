@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   optimizeDeps: {
-    include: ['@codemirror/view'],
+    include: ['@codemirror/view','@codemirror/lang-javascript','@codemirror/commands'],
   },
   build: {
     // Assure la compatibilité avec CommonJS si nécessaire
