@@ -2,7 +2,10 @@
 import '../styles/codemirror.css';
 
 const { doc = `function hello() {
+  // Et les commentaires alors ?
   console.log("hello les loulous");
+  var Library = require('sketch/dom').Library
+  document.changeColorSpace(ColorSpace.P3, true)
 }` } = Astro.props;
 
 ---
