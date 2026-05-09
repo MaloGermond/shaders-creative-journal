@@ -7,16 +7,15 @@
 
 <client:only>
   <script>
-    import { EditorView} from "@codemirror/view";
-    // import { javascript } from "@codemirror/lang-javascript"; // Exemple : pour la coloration JS
+    import { EditorView, lineNumbers} from "@codemirror/view";
+    // import { javascript } from "@codemirror/lang-javascript";
 
     // Initialisation de l'éditeur UNIQUEMENT côté client
     const editor = new EditorView({
-      doc: 'console.log("hello world")',
+      doc: 'console.log("hello world";)',
       parent: document.querySelector("#editor"),
-      extensions: [],
+      extensions: [lineNumbers()],
     });
 
-    console.log(editor)
   </script>
 </client:only>

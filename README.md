@@ -1,9 +1,10 @@
 # Shaders creative journal
 
-## Reference graphique
+# Styling documentation
 
+## Reference graphique
 https://developer.sketch.com/reference/api/#library
 
-## Documentations
+## Libraries
 
 https://codemirror.net/docs/
