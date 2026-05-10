@@ -1,0 +1,56 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+const { nav = [] } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main{
+				display: grid;
+				grid-template-columns: 300px 1fr 1fr;
+			}
+
+			.nav-link{
+		    display: block;
+		    margin: 0;
+		    padding: .5rem 0;
+		    color: rgba(0, 0, 0, .85);
+		    cursor: pointer;
+		    font-size: 1rem;
+		    font-weight: 600;
+		    list-style-type: none;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    text-decoration: none;
+		    transition: color .25s ease-out;
+			}
+
+			.content{
+				grid-column: 2/3;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<nav>
+        {nav.map((item) => (
+          <a href={"#"+item.id} class="nav-link">{item.title}</a>
+        ))}
+      </nav>
+      <section class="content">
+      	<slot />
+      </section>
+			
+		</main>
+		<Footer />
+	</body>
+</html>

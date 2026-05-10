@@ -1,5 +1,5 @@
 ---
-import Layout from '../../components/Layout.astro';
+import ReferenceLayout from '../../layouts/ReferenceLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 // Récupère et trie les posts
@@ -14,9 +14,14 @@ const contents = await Promise.all(
   })
 );
 
+const navItems = contents.map((el) => ({
+  title: el.data.title,
+  id: el.id,
+}));
+
 ---
 
-<Layout>
+<ReferenceLayout nav={navItems}>
   <h1>API Reference</h1>
 
   {contents.map((post) => (
@@ -25,4 +30,4 @@ const contents = await Promise.all(
       <post.Content />
     </section>
   ))}
-</Layout>
+</ReferenceLayout>
