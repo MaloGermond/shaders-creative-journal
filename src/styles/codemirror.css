@@ -7,38 +7,3 @@
   padding: 1rem;
 }
 
-/* ex: function */
-.ͼb{
-  color: #D441EE;
-}
-
-/* Pour les commentaires */
-.ͼm{
-  color: #949495;
-}
-
-.ͼg{
-  color: black ;
-}
-
-/* ex: 'A string value' */
-.ͼe{
-  color: #FA3B44;
-}
-
-/* ex: true */
-.ͼc{ 
-  #D08E00;
-}
-
-.cm-content {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.cm-gutterElement{
-  color: #aaaaaa;
-  border-style: none;  
-  text-align: center;
-  font-size:0.8rem;
-}

@@ -18,14 +18,24 @@ const { doc = `function hello() {
   <script>
     // Ne pas oublier d'activer/desactivé les lib dans vite.config.js
     import { EditorView, keymap, highlightSpecialChars, drawSelection, dropCursor } from "@codemirror/view";
-    import { syntaxHighlighting, defaultHighlightStyle, bracketMatching } from "@codemirror/language";
+    import { syntaxHighlighting, defaultHighlightStyle, bracketMatching, HighlightStyle } from "@codemirror/language";
     import { javascript } from "@codemirror/lang-javascript";
     import { indentWithTab } from "@codemirror/commands";
     import { autocompletion } from "@codemirror/autocomplete";
+    import { tags } from "@lezer/highlight";
     
 
     const editorElement = document.querySelector("#editor");
     const doc = JSON.parse(editorElement.dataset.doc); 
+
+    const customHighlighting = HighlightStyle.define([
+  // Styles par défaut (optionnel)
+  { tag: tags.keyword, color: "#777" },
+  { tag: tags.string, color: "#2a7f2a" },
+  { tag: tags.number, color: "#164" },
+  { tag: tags.function(tags.variableName), color: "#00f" },
+]);
+
 
     const customBasicSetup = [
       highlightSpecialChars(),
@@ -33,7 +43,7 @@ const { doc = `function hello() {
       dropCursor(),
       bracketMatching(),
       autocompletion(),
-      syntaxHighlighting(defaultHighlightStyle),
+      syntaxHighlighting(customHighlighting),
     ];
 
     new EditorView({
