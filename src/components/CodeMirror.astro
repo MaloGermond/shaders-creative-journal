@@ -16,20 +16,43 @@ const { doc = `function hello() {
 
 <client:only>
   <script>
-    import {basicSetup} from "codemirror"
-    import { EditorView, lineNumbers, keymap} from "@codemirror/view";
+    // Ne pas oublier d'activer/desactivé les lib dans vite.config.js
+    import { EditorView, keymap, highlightSpecialChars } from "@codemirror/view";
     import { javascript } from "@codemirror/lang-javascript";
-    import {indentWithTab} from "@codemirror/commands"
+    import { indentWithTab } from "@codemirror/commands";
+    import { autocompletion } from "@codemirror/autocomplete";
+    
 
     const editorElement = document.querySelector("#editor");
     const doc = JSON.parse(editorElement.dataset.doc); 
 
-    
-    // Initialisation de l'éditeur UNIQUEMENT côté client
+    const customBasicSetup = [
+      // highlightActiveLineGutter(),
+      highlightSpecialChars(),
+      // history(),
+      // foldGutter(),
+      // drawSelection(),
+      // dropCursor(),
+      // EditorView.lineWrapping,
+      // EditorView.allowMultipleSelections,
+      // defaultHighlightStyle,
+      // syntaxHighlighting,
+      // bracketMatching(),
+      // closeBrackets(),
+      autocompletion(),
+      // rectangularSelection(),
+      // crosshairCursor(),
+      // highlightActiveLine(),
+      // highlightSelectionMatches(),
+    ];
+
     new EditorView({
       doc: doc,
       parent: document.querySelector("#editor"),
-      extensions: [basicSetup, lineNumbers(), javascript(), keymap.of([indentWithTab])],
+      extensions: [customBasicSetup,
+        javascript(),
+        keymap.of([indentWithTab]),
+      ]
     });
 
   </script>
