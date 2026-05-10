@@ -7,4 +7,4 @@ update: 1778423037
 
 | Version | What’s New |
 | --- | --- |
-| Mondrian | (2026.5)[]  |
+| Mondrian | [2026.5]()  |
