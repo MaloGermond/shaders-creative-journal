@@ -17,7 +17,8 @@ const { doc = `function hello() {
 <client:only>
   <script>
     // Ne pas oublier d'activer/desactivé les lib dans vite.config.js
-    import { EditorView, keymap, highlightSpecialChars } from "@codemirror/view";
+    import { EditorView, keymap, highlightSpecialChars, drawSelection, dropCursor } from "@codemirror/view";
+    import { syntaxHighlighting, defaultHighlightStyle, bracketMatching } from "@codemirror/language";
     import { javascript } from "@codemirror/lang-javascript";
     import { indentWithTab } from "@codemirror/commands";
     import { autocompletion } from "@codemirror/autocomplete";
@@ -27,23 +28,12 @@ const { doc = `function hello() {
     const doc = JSON.parse(editorElement.dataset.doc); 
 
     const customBasicSetup = [
-      // highlightActiveLineGutter(),
       highlightSpecialChars(),
-      // history(),
-      // foldGutter(),
-      // drawSelection(),
-      // dropCursor(),
-      // EditorView.lineWrapping,
-      // EditorView.allowMultipleSelections,
-      // defaultHighlightStyle,
-      // syntaxHighlighting,
-      // bracketMatching(),
-      // closeBrackets(),
+      drawSelection(),
+      dropCursor(),
+      bracketMatching(),
       autocompletion(),
-      // rectangularSelection(),
-      // crosshairCursor(),
-      // highlightActiveLine(),
-      // highlightSelectionMatches(),
+      syntaxHighlighting(defaultHighlightStyle),
     ];
 
     new EditorView({
