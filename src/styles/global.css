@@ -83,19 +83,21 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 3rem;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 2rem;
+	margin-top:1rem;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 1.5rem;
+	margin-top:0.8rem;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.4rem;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.3em;
 }
 strong,
 b {
