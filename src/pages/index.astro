@@ -1,31 +1,18 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import CodeMirror from "../components/CodeMirror.astro"
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Layout from "../components/Layout.astro";
+import CodeEditor from "../components/CodeEditor.astro"
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Bienvenue sur mon repo Shader Journal ! 🎨✨</h1>
-			<p>
-				Ce dépôt est mon carnet d’apprentissage des shaders, où je documente ma
-				compréhension des mathématiques derrière les effets visuels et leur
-				traduction graphique. L’objectif ? Explorer de manière créative les
-				liens entre équations et rendus, jour après jour. Pour moi : Une trace
-				de mon évolution, mes expériences, et mes "aha moments". Pour toi : Une
-				documentation accessible, avec des exemples concrets, des shaders
-				commentés, et des démos interactives.
-			</p>
-			<CodeMirror/>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<h1>Bienvenue sur mon repo Shader Journal ! 🎨✨</h1>
+	<p>
+		Ce dépôt est mon carnet d’apprentissage des shaders, où je documente ma
+		compréhension des mathématiques derrière les effets visuels et leur
+		traduction graphique. L’objectif ? Explorer de manière créative les
+		liens entre équations et rendus, jour après jour. Pour moi : Une trace
+		de mon évolution, mes expériences, et mes "aha moments". Pour toi : Une
+		documentation accessible, avec des exemples concrets, des shaders
+		commentés, et des démos interactives.
+	</p>
+	<CodeEditor/>
+</Layout>

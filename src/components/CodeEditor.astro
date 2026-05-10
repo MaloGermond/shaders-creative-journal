@@ -1,7 +1,7 @@
 ---
 import '../styles/codemirror.css';
 
-const { doc = `function hello() {
+const { content = `function hello() {
   // Et les commentaires alors ?
   console.log("hello les loulous");
   var Library = require('sketch/dom').Library
@@ -11,7 +11,7 @@ const { doc = `function hello() {
 ---
 
 <section>
-  <div id="editor" data-doc={JSON.stringify(doc)}></div>
+  <div id="editor" data-doc={JSON.stringify(content)}></div>
 </section>
 
 <client:only>
