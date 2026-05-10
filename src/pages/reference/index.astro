@@ -1,7 +1,14 @@
 ---
 import Layout from '../../components/Layout.astro'
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('reference'));
+
+console.log(posts)
+
 ---
 
 <Layout>
 	<h1>API Reference</h1>
+
 </Layout>

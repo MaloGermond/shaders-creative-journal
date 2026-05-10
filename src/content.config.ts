@@ -17,4 +17,9 @@ const blog = defineCollection({
 		}),
 });
 
-export const collections = { blog };
+const reference = defineCollection({
+	// Load Markdown and MDX files in the `src/content/blog/` directory.
+	loader: glob({ base: './src/content/reference', pattern: '**/*.{md,mdx}' }),
+});
+
+export const collections = { blog, reference };
