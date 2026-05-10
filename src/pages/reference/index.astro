@@ -1,14 +1,28 @@
 ---
-import Layout from '../../components/Layout.astro'
-import { getCollection } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import { getCollection, render } from 'astro:content';
 
-const posts = (await getCollection('reference'));
+// Récupère et trie les posts
+const sortedPosts = (await getCollection('reference')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0)
+);
 
-console.log(posts)
+const contents = await Promise.all(
+  sortedPosts.map(async (post) => {
+    const { Content } = await render(post);
+    return { ...post, Content };
+  })
+);
 
 ---
 
 <Layout>
-	<h1>API Reference</h1>
+  <h1>API Reference</h1>
 
+  {contents.map((post) => (
+    <section id={post.id} class="post-section">
+      <h2>{post.data.title}</h2>
+      <post.Content />
+    </section>
+  ))}
 </Layout>
