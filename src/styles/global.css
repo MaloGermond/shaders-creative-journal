@@ -51,6 +51,29 @@
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
+	--purple-main: #7913FE;
+
+	--white: #ffffff;
+	--black: #000000;
+
+	--gray-50: #F7F7F8;
+	--gray-100: #EEEDF1;
+	--gray-200: #E0DFE5;
+	--gray-300: #C9C8D2;
+	--gray-400: #ADABB8;
+	--gray-500: #8E8B99;
+	--gray-600: #6A6578;
+	--gray-700: #454057;
+	--gray-800: #160829;
+	--gray-900: #110126;
+
+	--background-emphasis: var(--gray-100);
+	--background-default: var(--gray-50);
+	--text-emphasis: var(--black);
+	--text-default: var(--gray-900);
+	--text-subdued: var(--gray-500);
+	--text-primary: var(--purple-main);
 }
 body {
 	font-family: Satoshi;
@@ -77,10 +100,10 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3rem;
+	font-size: 5rem;
 }
 h2 {
-	font-size: 2rem;
+	font-size: 3rem;
 	margin-top:1rem;
 }
 h3 {
