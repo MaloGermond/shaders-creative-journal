@@ -24,38 +24,35 @@ const navItems = contents.map((el) => ({
 <ReferenceLayout nav={navItems}>
   <h1>API Reference</h1>
 
+  <section>
   {contents.map((post) => (
-    <section id={post.id}>
-      <div class="wrapper">
-        <h2 class="title">{post.data.title}</h2>
-        <post.Content />
-      </div>
-    </section>
+    <article id={post.id}>
+      <h2 class="title">{post.data.title}</h2>
+      <post.Content />
+      <div class="background-wrapper"></div>
+    </article>
   ))}
+  </section>
 
   </div>
 
   <style>
-    .wrapper{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
+    article{
+      display:flex;
+      flex-direction: column;
       gap: 1rem;
+      width: 50%;
+      background-color: var(--background-default);
     }
 
-    .wrapper :global(*) {
-      grid-column: 2 / 3;
-    }
-
-    .wrapper :global(:not(.astro-code)) {
-      grid-column: 1 / 2;
-    }
-
-    .wrapper::after {
-      content: "";
-      grid-column: 2 / 3;
+    section{
       background-color: var(--background-emphasis);
-      z-index: -1;
     }
+
+    article :global(.astro-code) {
+    margin-left: auto;
+    width: 50%;
+  }
 
   </style>
   

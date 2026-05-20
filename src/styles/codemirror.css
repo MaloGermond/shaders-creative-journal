@@ -8,3 +8,6 @@
   font-size:0.8rem;
 }
 
+.cm-editor.cm-focused { 
+  outline: 1px solid transparent; 
+}
