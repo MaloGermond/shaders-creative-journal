@@ -187,10 +187,6 @@ code {
 	border-radius: 2px;
 }
 
-.astro-code {
-	font-size: 1rem;
-	font-family: FiraCode;
-}
 
 pre {
 	padding: 1.5em;

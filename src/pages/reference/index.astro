@@ -29,7 +29,7 @@ const navItems = contents.map((el) => ({
     <article id={post.id}>
       <h2 class="title">{post.data.title}</h2>
       <post.Content />
-      <div class="background-wrapper"></div>
+      {/*<div class="background-wrapper"></div>*/}
     </article>
   ))}
   </section>
@@ -37,24 +37,28 @@ const navItems = contents.map((el) => ({
   </div>
 
   <style>
-    article{
-      display:flex;
-      flex-direction: column;
+    article {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      width: calc(50% + 1rem);
-      background-color: var(--background-default);
       padding-right: 1rem;
     }
 
+    article :global(*){
+      grid-column: 1/2;
+    }
+
     section{
-      background-color: var(--background-emphasis);
+      /*background-color: var(--background-emphasis);*/
     }
 
     article :global(.astro-code) {
-    margin-left: auto;
-    width: 50%;
-  }
-
+      grid-column: 2/3;
+      height: fit-content;
+      position: sticky;
+      top: 0;
+    }
+    
   </style>
   
 </ReferenceLayout>
