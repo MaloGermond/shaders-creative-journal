@@ -1,8 +1,6 @@
 ---
 import ReferenceLayout from '../../layouts/ReferenceLayout.astro';
 import { getCollection, render } from 'astro:content';
-import remarkParse from 'remark-parse';
-import { unified } from 'unified';
 
 // Récupère et trie les posts
 const sortedPosts = (await getCollection('reference')).sort(
@@ -11,6 +9,9 @@ const sortedPosts = (await getCollection('reference')).sort(
 
 const contents = await Promise.all(
   sortedPosts.map(async (post) => {
+    
+    
+    
     const { Content } = await render(post);
     return { ...post, Content };
   })
