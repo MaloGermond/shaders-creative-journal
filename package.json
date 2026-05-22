@@ -22,6 +22,7 @@
     "@codemirror/view": "^6.42.1",
     "@lezer/highlight": "^1.2.3",
     "astro": "^6.1.9",
+    "remark": "^15.0.1",
     "sharp": "^0.34.3"
   }
 }
